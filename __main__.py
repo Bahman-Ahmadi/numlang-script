@@ -45,7 +45,7 @@ while True:
 
              # saving in the db
             if save == "r":
-                saveRes = get(text)
+                saveRes = decrypt(get(text), lang)
             elif save == "w":
                 saveRes = store(generateKey(), result)
             elif save == "e":
@@ -59,7 +59,7 @@ while True:
 
     except EOFError:
         exit()
-    except IndexError:
-        print("    [!] [i][red]ERROR: [/red][/i] Entered Input Is Invaild")
+    # except IndexError:
+    #    print("    [!] [i][red]ERROR: [/red][/i] Entered Input Is Invaild")
     except KeyboardInterrupt:
         exit()
